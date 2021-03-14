@@ -3,5 +3,12 @@
 
 module.exports = function towelSort (matrix) {
  
-  return matrix.flat(Infinity).sort((a,b) => a-b);
+ if (matrix === undefined) return [];
+  for (let i = 0; i < matrix.length; i++) {
+    if ((i !== 0) && (i % 2 !== 0)) {
+      matrix[i].reverse();
+    }
+    
+  }
+  return matrix.flat();
 }
